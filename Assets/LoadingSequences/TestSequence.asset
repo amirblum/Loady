@@ -13,20 +13,18 @@ MonoBehaviour:
   m_Name: TestSequence
   m_EditorClassIdentifier: 
   SequenceName: Test Sequence
+  LoadTime: 10
   TipSequence:
   - PercentToLoad: 0
     TipText: Test text 1
     ScrollSpeed: 50
     Emoji: {fileID: 0}
-    WaitForNextPressed: 1
   - PercentToLoad: 0
     TipText: 'Test text 2 Test text 2 Test text 2 Test text 2 Test text 2 Test text
       2 '
     ScrollSpeed: 50
     Emoji: {fileID: 0}
-    WaitForNextPressed: 1
   - PercentToLoad: 0
     TipText: Test text 3
     ScrollSpeed: 5
     Emoji: {fileID: 0}
-    WaitForNextPressed: 1

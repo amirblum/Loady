@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "LoadingSequence", menuName = "LoadingSequence", order = 1)]
 public class LoadingSequence : ScriptableObject
@@ -11,9 +12,9 @@ public class LoadingSequence : ScriptableObject
         public string TipText;
         public float ScrollSpeed = 50;
         public Sprite Emoji;
-        public bool WaitForNextPressed = true;
     }
 
     public string SequenceName;
-    public LoadingTip[] TipSequence;
+    public float LoadTime = 10;
+    public LoadingTip[] Tips;
 }

@@ -12,7 +12,8 @@ public class LoadingScreen : MonoBehaviour
     [Header("Config")] 
     [SerializeField] float _nextTipButtonFadeInTime;
 
-    [Header("Elements")]
+    [Header("Elements")] 
+    [SerializeField] Image _loadingBar;
     [SerializeField] TMP_Text _loadingTip;
     [SerializeField] Button _nextTipButton;
 
@@ -26,13 +27,23 @@ public class LoadingScreen : MonoBehaviour
 
     public void StartSequence(LoadingSequence loadingSequence)
     {
-        StartCoroutine(SequenceCoroutine(loadingSequence));
+        Debug.Log($"Starting sequence: {loadingSequence.SequenceName}");
+        StartCoroutine(LoadingBarCoroutine(loadingSequence.LoadTime));
+        StartCoroutine(SequenceCoroutine(loadingSequence.Tips));
     }
 
-    private IEnumerator SequenceCoroutine(LoadingSequence loadingSequence)
+    private IEnumerator LoadingBarCoroutine(float loadTime)
     {
-        Debug.Log($"Starting sequence: {loadingSequence.SequenceName}");
-        foreach (var tip in loadingSequence.TipSequence)
+        for (var time = 0f; time < loadTime; time += Time.deltaTime)
+        {
+            _loadingBar.fillAmount = time / loadTime;
+            yield return null;
+        }
+    }
+
+    private IEnumerator SequenceCoroutine(LoadingSequence.LoadingTip[] tips)
+    {
+        foreach (var tip in tips)
         {
             Debug.Log($"Applying tip text {tip.TipText}");
             yield return DisplayTipCoroutine(tip);
@@ -70,8 +81,7 @@ public class LoadingScreen : MonoBehaviour
         
         for (var time = 0f; time < _nextTipButtonFadeInTime; time += Time.deltaTime)
         {
-            var percent = time / _nextTipButtonFadeInTime;
-            canvasGroup.alpha = percent;
+            canvasGroup.alpha = time / _nextTipButtonFadeInTime;
             yield return null;
         }
     }
