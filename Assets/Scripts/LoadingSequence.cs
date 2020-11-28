@@ -6,15 +6,28 @@ using UnityEngine.Serialization;
 public class LoadingSequence : ScriptableObject
 {
     [Serializable]
-    public class LoadingTip 
+    public class LoadBarConfig
     {
-        public float PercentToLoad;
+        public float LoadDelay;
+        public float LoadPercent;
+        public float LoadTime;
+    }
+    
+    [Serializable]
+    public class LoadingTip
+    {
         public string TipText;
         public float ScrollSpeed = 50;
         public Sprite Emoji;
     }
 
+    [Serializable]
+    public class LoadingConfig
+    {
+        public LoadBarConfig LoadBar;
+        public LoadingTip Tip;
+    }
+
     public string SequenceName;
-    public float LoadTime = 10;
-    public LoadingTip[] Tips;
+    public LoadingConfig[] Sequence;
 }

@@ -13,18 +13,28 @@ MonoBehaviour:
   m_Name: TestSequence
   m_EditorClassIdentifier: 
   SequenceName: Test Sequence
-  LoadTime: 10
-  TipSequence:
-  - PercentToLoad: 0
-    TipText: Test text 1
-    ScrollSpeed: 50
-    Emoji: {fileID: 0}
-  - PercentToLoad: 0
-    TipText: 'Test text 2 Test text 2 Test text 2 Test text 2 Test text 2 Test text
-      2 '
-    ScrollSpeed: 50
-    Emoji: {fileID: 0}
-  - PercentToLoad: 0
-    TipText: Test text 3
-    ScrollSpeed: 5
-    Emoji: {fileID: 0}
+  Sequence:
+  - LoadBar:
+      LoadDelay: 0
+      LoadPercent: 0.25
+      LoadTime: 3
+    Tip:
+      TipText: Welcome to the game's loading screen!
+      ScrollSpeed: 50
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.2
+      LoadPercent: 0.75
+      LoadTime: 6
+    Tip:
+      TipText: Use arrows to move, space to jump
+      ScrollSpeed: 50
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 1
+      LoadTime: 1
+    Tip:
+      TipText: Play time!
+      ScrollSpeed: 10
+      Emoji: {fileID: 0}

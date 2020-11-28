@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,13 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] TMP_Text _loadingTip;
     [SerializeField] Button _nextTipButton;
 
+    private readonly Queue<LoadingSequence.LoadBarConfig> _loadBarQueue = new Queue<LoadingSequence.LoadBarConfig>();
+
+    protected void Start()
+    {
+        _loadingBar.fillAmount = 0;
+    }
+
     protected void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -28,32 +36,61 @@ public class LoadingScreen : MonoBehaviour
     public void StartSequence(LoadingSequence loadingSequence)
     {
         Debug.Log($"Starting sequence: {loadingSequence.SequenceName}");
-        StartCoroutine(LoadingBarCoroutine(loadingSequence.LoadTime));
-        StartCoroutine(SequenceCoroutine(loadingSequence.Tips));
+        StartCoroutine(SequenceCoroutine(loadingSequence));
     }
 
-    private IEnumerator LoadingBarCoroutine(float loadTime)
+    private IEnumerator SequenceCoroutine(LoadingSequence loadingSequence)
     {
-        for (var time = 0f; time < loadTime; time += Time.deltaTime)
+        StartCoroutine(LoadingBarCoroutine());
+        
+        foreach (var sequenceElement in loadingSequence.Sequence)
         {
-            _loadingBar.fillAmount = time / loadTime;
-            yield return null;
+            timeLastTipShown = Time.timeSinceLevelLoad;
+            _loadBarQueue.Enqueue(sequenceElement.LoadBar);
+            yield return DisplayTipCoroutine(sequenceElement.Tip);
         }
     }
 
-    private IEnumerator SequenceCoroutine(LoadingSequence.LoadingTip[] tips)
+    private float timeLastTipShown;
+
+    
+    private IEnumerator LoadingBarCoroutine()
     {
-        foreach (var tip in tips)
+        _loadingBar.fillAmount = 0f;
+        
+        while (true)
         {
-            Debug.Log($"Applying tip text {tip.TipText}");
-            yield return DisplayTipCoroutine(tip);
-            yield return FadeInNextTipButton();
-            yield return WaitUntilNextTipButtonPressed();
-            _nextTipButton.gameObject.SetActive(false);
+            yield return new WaitUntil(() => _loadBarQueue.Count > 0);
+
+            var loadBarConfig = _loadBarQueue.Dequeue();
+
+            var timeSinceLastSection = Time.timeSinceLevelLoad - timeLastTipShown;
+            if (timeSinceLastSection < loadBarConfig.LoadDelay)
+            {
+                yield return new WaitForSeconds(loadBarConfig.LoadDelay - timeSinceLastSection);
+            }
+
+            var startingFillAmount = _loadingBar.fillAmount;
+            for (var time = 0f; time < loadBarConfig.LoadTime; time += Time.deltaTime)
+            {
+                var additionalFillPercent = time / loadBarConfig.LoadTime;
+                _loadingBar.fillAmount = startingFillAmount + additionalFillPercent * (loadBarConfig.LoadPercent - startingFillAmount);
+                yield return null;
+            }
+            
+            _loadingBar.fillAmount = loadBarConfig.LoadPercent;
         }
     }
 
     private IEnumerator DisplayTipCoroutine(LoadingSequence.LoadingTip tip)
+    {
+        yield return DisplayTipTextCoroutine(tip);
+        yield return FadeInNextTipButton();
+        yield return WaitUntilNextTipButtonPressed();
+        _nextTipButton.gameObject.SetActive(false);
+    }
+
+    private IEnumerator DisplayTipTextCoroutine(LoadingSequence.LoadingTip tip)
     {
         var waitBetweenLetters = 1f / tip.ScrollSpeed;
         
