@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float miniJumpForce;
 	[SerializeField] private LayerMask ground;
+	[SerializeField] private float jumpPressGravity;
 
 	private float moveHorizontalInput;
 	private bool isJumpInput;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 	public Vector2 velocity => rigidbody2D.velocity;
 
 	public bool IsGrounded { get; set; }
+
+	private bool isFirstJumpPart;
 
 	private void Awake()
 	{
@@ -64,11 +67,23 @@ public class PlayerMovement : MonoBehaviour
 				// Debug.Log("Jumped");
 				Jump(jumpForce);
 				IsGrounded = false;
+				isFirstJumpPart = true;
 			}
 		}
 		else
 		{
-			
+			if (isFirstJumpPart)
+			{
+				if (isJumpInput && velocity.y > 0)
+				{
+					rigidbody2D.gravityScale = jumpPressGravity;
+				}
+				else
+				{
+					isFirstJumpPart = false;
+					rigidbody2D.gravityScale = 1;
+				}
+			}
 		}
 	}
 

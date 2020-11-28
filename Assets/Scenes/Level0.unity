@@ -396,12 +396,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legs: {fileID: 1407260888}
-  speed: 15
-  jumpForce: 10
-  miniJumpForce: 5
+  speed: 45
+  jumpForce: 15
+  miniJumpForce: 12
   ground:
     serializedVersion: 2
     m_Bits: 256
+  jumpPressGravity: 0.6
 --- !u!114 &541904633
 MonoBehaviour:
   m_ObjectHideFlags: 0
