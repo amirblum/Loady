@@ -81,10 +81,10 @@ public class LoadingScreen : MonoBehaviour
 
     private IEnumerator DisplayTipCoroutine(LoadingSequence.LoadingTip tip)
     {
+        _nextTipButton.gameObject.SetActive(false);
         yield return DisplayTipTextCoroutine(tip);
         yield return FadeInNextTipButton();
         yield return WaitUntilNextTipButtonPressed();
-        _nextTipButton.gameObject.SetActive(false);
     }
 
     private IEnumerator DisplayTipTextCoroutine(LoadingSequence.LoadingTip tip)
@@ -112,12 +112,9 @@ public class LoadingScreen : MonoBehaviour
     {
         _nextTipButton.gameObject.SetActive(true);
         var canvasGroup = _nextTipButton.GetComponent<CanvasGroup>();
-        
-        for (var time = 0f; time < _nextTipButtonFadeInTime; time += Time.deltaTime)
-        {
-            canvasGroup.alpha = time / _nextTipButtonFadeInTime;
-            yield return null;
-        }
+        canvasGroup.alpha = 0f;
+        var fadeInTween = canvasGroup.DOFade(1f, _nextTipButtonFadeInTime);
+        yield return fadeInTween.WaitForCompletion();
     }
 
     [Button]
