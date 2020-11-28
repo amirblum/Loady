@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
+using DG.Tweening;
 using TMPro;
 
 public class LoadingScreen : MonoBehaviour
@@ -18,6 +19,7 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] TMP_Text _loadingTip;
     [SerializeField] Button _nextTipButton;
 
+    private float _timeLastTipShown;
     private readonly Queue<LoadingSequence.LoadBarConfig> _loadBarQueue = new Queue<LoadingSequence.LoadBarConfig>();
 
     protected void Start()
@@ -45,15 +47,12 @@ public class LoadingScreen : MonoBehaviour
         
         foreach (var sequenceElement in loadingSequence.Sequence)
         {
-            timeLastTipShown = Time.timeSinceLevelLoad;
+            _timeLastTipShown = Time.timeSinceLevelLoad;
             _loadBarQueue.Enqueue(sequenceElement.LoadBar);
             yield return DisplayTipCoroutine(sequenceElement.Tip);
         }
     }
 
-    private float timeLastTipShown;
-
-    
     private IEnumerator LoadingBarCoroutine()
     {
         _loadingBar.fillAmount = 0f;
@@ -64,21 +63,19 @@ public class LoadingScreen : MonoBehaviour
 
             var loadBarConfig = _loadBarQueue.Dequeue();
 
-            var timeSinceLastSection = Time.timeSinceLevelLoad - timeLastTipShown;
+            var timeSinceLastSection = Time.timeSinceLevelLoad - _timeLastTipShown;
             if (timeSinceLastSection < loadBarConfig.LoadDelay)
             {
                 yield return new WaitForSeconds(loadBarConfig.LoadDelay - timeSinceLastSection);
             }
 
-            var startingFillAmount = _loadingBar.fillAmount;
-            for (var time = 0f; time < loadBarConfig.LoadTime; time += Time.deltaTime)
-            {
-                var additionalFillPercent = time / loadBarConfig.LoadTime;
-                _loadingBar.fillAmount = startingFillAmount + additionalFillPercent * (loadBarConfig.LoadPercent - startingFillAmount);
-                yield return null;
-            }
+            var fillTween = 
+                _loadingBar.DOFillAmount(
+                loadBarConfig.LoadPercent, 
+                loadBarConfig.LoadTime)
+                    .SetEase(loadBarConfig.LoadEase);
             
-            _loadingBar.fillAmount = loadBarConfig.LoadPercent;
+            yield return fillTween.WaitForCompletion();
         }
     }
 

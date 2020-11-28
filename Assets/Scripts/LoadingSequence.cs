@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
+using DG.Tweening;
 
 [CreateAssetMenu(fileName = "LoadingSequence", menuName = "LoadingSequence", order = 1)]
 public class LoadingSequence : ScriptableObject
@@ -11,6 +11,7 @@ public class LoadingSequence : ScriptableObject
         public float LoadDelay;
         public float LoadPercent;
         public float LoadTime;
+        public Ease LoadEase = Ease.OutQuad;
     }
     
     [Serializable]

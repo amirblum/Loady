@@ -18,6 +18,7 @@ MonoBehaviour:
       LoadDelay: 0
       LoadPercent: 0.25
       LoadTime: 3
+      LoadEase: 6
     Tip:
       TipText: Welcome to the game's loading screen!
       ScrollSpeed: 50
@@ -26,6 +27,7 @@ MonoBehaviour:
       LoadDelay: 1.2
       LoadPercent: 0.75
       LoadTime: 6
+      LoadEase: 1
     Tip:
       TipText: Use arrows to move, space to jump
       ScrollSpeed: 50
@@ -34,6 +36,7 @@ MonoBehaviour:
       LoadDelay: 0.75
       LoadPercent: 1
       LoadTime: 1
+      LoadEase: 6
     Tip:
       TipText: Play time!
       ScrollSpeed: 10
