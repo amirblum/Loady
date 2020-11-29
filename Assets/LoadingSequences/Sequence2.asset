@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9469f5bf38dc416bb032557da38d70a4, type: 3}
+  m_Name: Sequence2
+  m_EditorClassIdentifier: 
+  SequenceName: Test Sequence
+  Sequence:
+  - LoadBar:
+      LoadDelay: 0
+      LoadPercent: 0.25
+      LoadTime: 3
+      LoadEase: 6
+    Tip:
+      TipText: Welcome to the game's loading screen!
+      ScrollSpeed: 50
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.2
+      LoadPercent: 0.75
+      LoadTime: 6
+      LoadEase: 1
+    Tip:
+      TipText: Use arrows to move, space to jump
+      ScrollSpeed: 50
+      Emoji: {fileID: 21300000, guid: f4c890f961d22b946b548a98fb31e6e1, type: 3}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 1
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: Play time!
+      ScrollSpeed: 10
+      Emoji: {fileID: 0}
+  LevelToLoad: {fileID: 7510473304538297068, guid: ca4fcfd9af6d39a4b84c1778b3680e5b, type: 3}

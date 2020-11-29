@@ -1201,6 +1201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8aaaa3bcf4ffe4f894e8d2caed1e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _killedDogSequence: {fileID: 11400000, guid: e5b69175405eeb84c972840093a16e2a, type: 2}
+  _savedDogSequence: {fileID: 11400000, guid: 9e83b06c6608f0c42999b8a677a66b83, type: 2}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b37a9f06ebac89488f30b10a1049283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingSequence: {fileID: 0}
+  _startingSequence: {fileID: 11400000, guid: 703c2dabdba103f41ad53966af0fe04f, type: 2}
   _nextTipButtonFadeInTime: 1
   _loadingBar: {fileID: 543235338175324369}
   _loadingTip: {fileID: 4663398465352992064}

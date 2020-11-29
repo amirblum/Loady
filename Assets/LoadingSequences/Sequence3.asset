@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9469f5bf38dc416bb032557da38d70a4, type: 3}
-  m_Name: TestSequence
+  m_Name: Sequence3
   m_EditorClassIdentifier: 
   SequenceName: Test Sequence
   Sequence:
@@ -41,3 +41,4 @@ MonoBehaviour:
       TipText: Play time!
       ScrollSpeed: 10
       Emoji: {fileID: 0}
+  LevelToLoad: {fileID: 7510473304538297068, guid: ca4fcfd9af6d39a4b84c1778b3680e5b, type: 3}

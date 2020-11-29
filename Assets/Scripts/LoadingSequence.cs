@@ -31,4 +31,5 @@ public class LoadingSequence : ScriptableObject
 
     public string SequenceName;
     public LoadingConfig[] Sequence;
+    public GameObject LevelToLoad;
 }

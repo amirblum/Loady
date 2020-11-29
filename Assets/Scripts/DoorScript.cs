@@ -6,12 +6,15 @@ using UnityEngine.Events;
 
 public class DoorScript : MonoBehaviour
 {
+	[SerializeField] LoadingSequence _killedDogSequence;
+	[SerializeField] LoadingSequence _savedDogSequence;
+	
 	public LayerMask playerLayerMask;
 	[SerializeField] private AudioEvent openAudioEvent;
 	
 	private bool isOpened { get; set; }
 
-	public UnityAction OnDoorOpen;
+	public event Action<LoadingSequence> OnDoorOpen;
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -23,24 +26,24 @@ public class DoorScript : MonoBehaviour
 				if (player.HasKey)
 				{
 					isOpened = true;
-					OpenDoor();
+					OpenDoor(player.KilledDog);
 				}
 			}
 		}
 	}
 
-	private void OpenDoor()
+	private void OpenDoor(bool killedDog)
 	{
-		StartCoroutine(OpenDoorEnumerator());
+		StartCoroutine(OpenDoorEnumerator(killedDog));
 	}
 
-	private IEnumerator OpenDoorEnumerator()
+	private IEnumerator OpenDoorEnumerator(bool killedDog)
 	{
 		openAudioEvent.Play();
 		var sr = GetComponent<SpriteRenderer>();
 		sr.color = new Color(0.9f, 0.9f, 0.9f, 0.5f);
 		yield return new WaitForSeconds(1f);
 		//todo - go to loading screen
-		OnDoorOpen?.Invoke();
+		OnDoorOpen?.Invoke(killedDog ? _killedDogSequence : _savedDogSequence);
 	}
 }

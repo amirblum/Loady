@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     private PlayerMovement movement;
     
     public bool HasKey { get; set; }
+    public bool KilledDog { get; set; }
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class PlayerScript : MonoBehaviour
             if (enemy.Alive)
             {
                 enemy.KillEnemy();
+                KilledDog = true;
                 movement.MiniJump();
             }
         }

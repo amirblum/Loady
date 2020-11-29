@@ -61,6 +61,16 @@ public class LoadingScreen : MonoBehaviour
             _loadBarQueue.Enqueue(sequenceElement.LoadBar);
             yield return DisplayTipCoroutine(sequenceElement.Tip);
         }
+
+        if (loadingSequence.LevelToLoad == null) yield break;
+        
+        var level = Instantiate(loadingSequence.LevelToLoad);
+        var door = level.GetComponentInChildren<DoorScript>();
+        door.OnDoorOpen += (sequence) =>
+        {
+            Destroy(level);
+            StartSequence(sequence);
+        };
     }
     
 
