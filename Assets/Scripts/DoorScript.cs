@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class DoorScript : MonoBehaviour
 {
 	public LayerMask playerLayerMask;
+	[SerializeField] private AudioEvent openAudioEvent;
 	
 	private bool isOpened { get; set; }
 
@@ -35,6 +36,7 @@ public class DoorScript : MonoBehaviour
 
 	private IEnumerator OpenDoorEnumerator()
 	{
+		openAudioEvent.Play();
 		var sr = GetComponent<SpriteRenderer>();
 		sr.color = new Color(0.9f, 0.9f, 0.9f, 0.5f);
 		yield return new WaitForSeconds(1f);

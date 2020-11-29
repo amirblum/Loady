@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
 	[Header("References")] 
 	[SerializeField] private Transform legs;
+
+	[SerializeField] private AudioEvent jumpAudioEvent;
 	
 	[Header("Parameters")] 
 	[SerializeField] private float speed;
@@ -90,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Jump(float force)
 	{
 		rigidbody2D.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+		jumpAudioEvent.Play();
 	}
 
 	private void GroundCheck()

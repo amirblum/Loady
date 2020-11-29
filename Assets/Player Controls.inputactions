@@ -102,6 +102,17 @@
                 },
                 {
                     "name": "",
+                    "id": "cafd4bd2-d88a-47f1-8ab7-9ff50ee14440",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "65e63a59-da6f-49da-af5f-f2c7cb06b721",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -148,6 +159,28 @@
                     "name": "",
                     "id": "b6299755-09ae-441c-a67a-2fd9df604f7b",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c202c363-91dd-4a90-8dc1-8d9998953524",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afbc1014-ac76-4a43-9849-9799de6f45d0",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

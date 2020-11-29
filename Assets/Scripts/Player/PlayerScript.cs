@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private LayerMask keyLayerMask;
+    [SerializeField] private AudioEvent pickupKeyAudioEvent;
 
     private PlayerMovement movement;
     
@@ -28,6 +29,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & keyLayerMask.value) > 0)
         {
+            pickupKeyAudioEvent.Play();
             HasKey = true;
             Destroy(other.gameObject);
         }
