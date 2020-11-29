@@ -5,34 +5,44 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using TMPro;
 
 public class LoadingScreen : MonoBehaviour
 {
-    [SerializeField] LoadingSequence _testSequence;
-
     [Header("Config")] 
+    [SerializeField] LoadingSequence _startingSequence;
     [SerializeField] float _nextTipButtonFadeInTime;
 
-    [Header("Elements")] 
+    [Header("Elements")]
     [SerializeField] Image _loadingBar;
     [SerializeField] TMP_Text _loadingTip;
     [SerializeField] Button _nextTipButton;
 
+    [Header("References")] 
+    [SerializeField] MainMenu _mainMenu;
+    [SerializeField] RandomImageSpawner _emojiSpawner;
+
     private float _timeLastTipShown;
     private readonly Queue<LoadingSequence.LoadBarConfig> _loadBarQueue = new Queue<LoadingSequence.LoadBarConfig>();
+    private TweenerCore<float, float, FloatOptions> _fillTween;
 
     protected void Start()
     {
         _loadingBar.fillAmount = 0;
+
+        _mainMenu.gameObject.SetActive(true);
+        _mainMenu.OnPlayClicked += () =>
+        {
+            _mainMenu.gameObject.SetActive(false);
+            StartSequence(_startingSequence);
+        };
     }
 
-    protected void Update()
+    public void OnNextTip()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            _nextTipButton.onClick.Invoke();
-        }
+        _nextTipButton.onClick.Invoke();
     }
 
     public void StartSequence(LoadingSequence loadingSequence)
@@ -52,6 +62,7 @@ public class LoadingScreen : MonoBehaviour
             yield return DisplayTipCoroutine(sequenceElement.Tip);
         }
     }
+    
 
     private IEnumerator LoadingBarCoroutine()
     {
@@ -69,19 +80,25 @@ public class LoadingScreen : MonoBehaviour
                 yield return new WaitForSeconds(loadBarConfig.LoadDelay - timeSinceLastSection);
             }
 
-            var fillTween = 
-                _loadingBar.DOFillAmount(
-                loadBarConfig.LoadPercent, 
-                loadBarConfig.LoadTime)
-                    .SetEase(loadBarConfig.LoadEase);
+            _fillTween?.Kill();
+
+            _fillTween = _loadingBar.DOFillAmount(
+                    loadBarConfig.LoadPercent, 
+                    loadBarConfig.LoadTime)
+                .SetEase(loadBarConfig.LoadEase);
             
-            yield return fillTween.WaitForCompletion();
+            yield return _fillTween.WaitForCompletion();
         }
     }
 
     private IEnumerator DisplayTipCoroutine(LoadingSequence.LoadingTip tip)
     {
         _nextTipButton.gameObject.SetActive(false);
+
+        if (tip.Emoji != null)
+        {
+            _emojiSpawner.SpawnImages(tip.Emoji);
+        }
         yield return DisplayTipTextCoroutine(tip);
         yield return FadeInNextTipButton();
         yield return WaitUntilNextTipButtonPressed();
@@ -120,6 +137,6 @@ public class LoadingScreen : MonoBehaviour
     [Button]
     private void RunTestSequence()
     {
-        StartSequence(_testSequence);
+        StartSequence(_startingSequence);
     }
 }
