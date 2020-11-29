@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
 	public RaycastHit2D HitBelow(LayerMask layerMask)
 	{
-		// return Physics2D.BoxCast(legs.position + Vector3.down * 0.01f/2f, new Vector2(transform.lossyScale.x * 0.9f, 0.01f), 0, Vector2.down, 0.015f, layerMask);
-		return Physics2D.Raycast(legs.position, Vector2.down, 0.09f, layerMask);
+		return Physics2D.BoxCast(legs.position + Vector3.down * 0.01f/2f, new Vector2(transform.lossyScale.x * 0.9f, 0.01f), 0, Vector2.down, 0.015f, layerMask);
+		// return Physics2D.Raycast(legs.position, Vector2.down, 0.09f, layerMask);
 	}
 
 	public void MiniJump()

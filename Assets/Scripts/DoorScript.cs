@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorScript : MonoBehaviour
 {
 	public LayerMask playerLayerMask;
 	
 	private bool isOpened { get; set; }
+
+	public UnityAction OnDoorOpen;
+	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (((1 << other.gameObject.layer) & playerLayerMask) > 0)
@@ -35,5 +39,6 @@ public class DoorScript : MonoBehaviour
 		sr.color = new Color(0.9f, 0.9f, 0.9f, 0.5f);
 		yield return new WaitForSeconds(1f);
 		//todo - go to loading screen
+		OnDoorOpen?.Invoke();
 	}
 }
