@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legs: {fileID: 4782695788668381495}
+  jumpAudioEvent: {fileID: 11400000, guid: aee68ca08529cfa4b81ebf31733b52d7, type: 2}
   speed: 45
   jumpForce: 15
   miniJumpForce: 12
@@ -671,6 +672,7 @@ MonoBehaviour:
   keyLayerMask:
     serializedVersion: 2
     m_Bits: 2048
+  pickupKeyAudioEvent: {fileID: 11400000, guid: 25b5dbe2a8ebf414e9c9a124925c85cf, type: 2}
 --- !u!1 &4782695787476575846
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +945,7 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  openAudioEvent: {fileID: 11400000, guid: 6ea5fbebee92be845b95e93978c0d172, type: 2}
 --- !u!1 &4782695788604577753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameObjectToCreateOnDestroy: {fileID: 5198888117494895996, guid: bb364b8f6321bca4995f79bdfed6a737, type: 3}
+  killedAudioEvent: {fileID: 11400000, guid: 2a8e34dc5ca60534eb89ed2d58e698a2, type: 2}
   speed: 2
   ground:
     serializedVersion: 2

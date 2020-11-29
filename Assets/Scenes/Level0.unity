@@ -213,14 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4782695787387174677, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
-      propertyPath: pickupKeyAudioEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 25b5dbe2a8ebf414e9c9a124925c85cf, type: 2}
-    - target: {fileID: 4782695787387174679, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
-      propertyPath: jumpAudioEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: aee68ca08529cfa4b81ebf31733b52d7, type: 2}
     - target: {fileID: 4782695787619037901, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -269,13 +261,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level0
       objectReference: {fileID: 0}
-    - target: {fileID: 4782695787822146617, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
-      propertyPath: openAudioEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ea5fbebee92be845b95e93978c0d172, type: 2}
-    - target: {fileID: 4782695788604577752, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
-      propertyPath: killedAudioEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a8e34dc5ca60534eb89ed2d58e698a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
