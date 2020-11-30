@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameObjectToCreateOnDestroy: {fileID: 5198888117494895996, guid: bb364b8f6321bca4995f79bdfed6a737, type: 3}
   killedAudioEvent: {fileID: 11400000, guid: 2a8e34dc5ca60534eb89ed2d58e698a2, type: 2}
-  bloodSplatter: {fileID: 0}
+  bloodSplatter: {fileID: 3373559487540770824}
   speed: 2
   ground:
     serializedVersion: 2

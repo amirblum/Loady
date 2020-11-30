@@ -41,7 +41,7 @@ MonoBehaviour:
       LoadEase: 6
     Tip:
       TipText: 'Dogs really are man''s best friend. '
-      ScrollSpeed: 10
+      ScrollSpeed: 40
       VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   - LoadBar:
