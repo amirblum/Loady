@@ -19,6 +19,7 @@ public class LoadingSequence : ScriptableObject
     {
         public string TipText;
         public float ScrollSpeed = 50;
+        public AudioClip VoiceOver;
         public Sprite Emoji;
     }
 

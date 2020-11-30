@@ -105,10 +105,16 @@ public class LoadingScreen : MonoBehaviour
     {
         _nextTipButton.gameObject.SetActive(false);
 
+        if (tip.VoiceOver != null)
+        {
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(tip.VoiceOver);
+        }
+        
         if (tip.Emoji != null)
         {
             _emojiSpawner.SpawnImages(tip.Emoji);
         }
+        
         yield return DisplayTipTextCoroutine(tip);
         yield return FadeInNextTipButton();
         yield return WaitUntilNextTipButtonPressed();
