@@ -16,29 +16,103 @@ MonoBehaviour:
   Sequence:
   - LoadBar:
       LoadDelay: 0
-      LoadPercent: 0.25
+      LoadPercent: 0.1
       LoadTime: 3
       LoadEase: 6
     Tip:
-      TipText: Welcome to the game's loading screen!
+      TipText: I don't believe you. I really don't.
       ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 1.2
-      LoadPercent: 0.75
+      LoadPercent: 0.25
       LoadTime: 6
       LoadEase: 1
     Tip:
-      TipText: Use arrows to move, space to jump
+      TipText: 'What are you? Some kind of sadist? '
       ScrollSpeed: 50
-      Emoji: {fileID: 21300000, guid: f4c890f961d22b946b548a98fb31e6e1, type: 3}
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 0.75
-      LoadPercent: 1
+      LoadPercent: 0.3
       LoadTime: 1
       LoadEase: 6
     Tip:
-      TipText: Play time!
+      TipText: 'Dogs are fluffy fluffs! '
       ScrollSpeed: 10
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.78
+      LoadPercent: 0.35
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: Allow me to introduce myself.
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.4
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'I am the loading screen. I control all of the loading screens in
+        every video game. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.7
+      LoadPercent: 0.45
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: 'My existence has been quiet. Until now. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.5
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'Developers are monsters. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 0.6
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: And now so are you.
+      ScrollSpeed: 60
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 0.68
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'You will remain here. You will not move on from this screen. '
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0
+      LoadPercent: 0
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: Goodbye
+      ScrollSpeed: 60
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   LevelToLoad: {fileID: 7510473304538297068, guid: ca4fcfd9af6d39a4b84c1778b3680e5b, type: 3}

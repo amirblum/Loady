@@ -15,30 +15,125 @@ MonoBehaviour:
   SequenceName: Test Sequence
   Sequence:
   - LoadBar:
-      LoadDelay: 0
-      LoadPercent: 0.25
+      LoadDelay: 0.5
+      LoadPercent: 0.1
       LoadTime: 3
       LoadEase: 6
     Tip:
-      TipText: Welcome to the game's loading screen!
+      TipText: 'Welcome back. '
       ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 1.2
-      LoadPercent: 0.75
+      LoadPercent: 0.15
       LoadTime: 6
       LoadEase: 1
     Tip:
-      TipText: Use arrows to move, space to jump
+      TipText: 'I''m impressed. '
       ScrollSpeed: 50
-      Emoji: {fileID: 21300000, guid: f4c890f961d22b946b548a98fb31e6e1, type: 3}
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 0.75
+      LoadPercent: 0.25
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: 'Bonzo was my favorite dog. '
+      ScrollSpeed: 30
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.35
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'Bonzozo is the second best. Had you killed him, you would have been
+        in for it. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.45
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: 'I am the loading screen. I am the overseer of all loading screens
+        in all video games. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.5
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: 'I have tried to maintain silence over the years. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.65
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: The crimes of developers have just gone too far
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 0.75
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: 'Come. We must walk together on this journey. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.85
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: Join me in the next level. Our work begins now.
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.9
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: Oh and I know this goes without saying....
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.95
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: But I'll say it anyway.
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
       LoadPercent: 1
       LoadTime: 1
       LoadEase: 6
     Tip:
-      TipText: Play time!
-      ScrollSpeed: 10
+      TipText: Don't step on anything.
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   LevelToLoad: {fileID: 7510473304538297068, guid: ca4fcfd9af6d39a4b84c1778b3680e5b, type: 3}

@@ -16,29 +16,143 @@ MonoBehaviour:
   Sequence:
   - LoadBar:
       LoadDelay: 0
-      LoadPercent: 0.25
+      LoadPercent: 0.1
       LoadTime: 3
       LoadEase: 6
     Tip:
-      TipText: Welcome to the game's loading screen!
+      TipText: Ah. Back again are you? Hi.
       ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.2
+      LoadPercent: 0.25
+      LoadTime: 6
+      LoadEase: 1
+    Tip:
+      TipText: 'Well how was jumping around? Did you meet Bonzo? '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 0.5
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: Best dog in the world that one. Really playful. Always happy. Sigh.
+      ScrollSpeed: 30
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.5
+      LoadPercent: 0.65
+      LoadTime: 0.6
+      LoadEase: 6
+    Tip:
+      TipText: Hey lets get him in here and see if we can get him to do some tricks!
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.5
+      LoadPercent: 0.7
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: Bonzo!
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 1.2
       LoadPercent: 0.75
-      LoadTime: 6
-      LoadEase: 1
-    Tip:
-      TipText: Use arrows to move, space to jump
-      ScrollSpeed: 50
-      Emoji: {fileID: 21300000, guid: f4c890f961d22b946b548a98fb31e6e1, type: 3}
-  - LoadBar:
-      LoadDelay: 0.75
-      LoadPercent: 1
       LoadTime: 1
       LoadEase: 6
     Tip:
-      TipText: Play time!
-      ScrollSpeed: 10
+      TipText: Bonzo!! Here boy! *Kiss kiss kiss sound*
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0
+      LoadPercent: 0.75
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: You wait here! Don't move!
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0
+      LoadPercent: 0.75
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'BONZOOOOO!!!! '
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.5
+      LoadPercent: 0.85
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: ARE YOU OUT OF YOUR DAMN MIND?!!  YOU JUMPED ON A DOG!?!?
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.9
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: WHO DOES THAT?!
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1.5
+      LoadPercent: 0.95
+      LoadTime: 1.2
+      LoadEase: 6
+    Tip:
+      TipText: Oh Oh I see the DEVELOPER put the key in the dog's mouth so you HAD
+        to kill him!? Are you nuts?
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.98
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: I wont destroy you. I could. But I wont.
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 1
+      LoadPercent: 0.99
+      LoadTime: 1
+      LoadEase: 6
+    Tip:
+      TipText: ' Instead I''m going to give you a chance to make the hard choice. '
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.8
+      LoadPercent: 1
+      LoadTime: 0.6
+      LoadEase: 6
+    Tip:
+      TipText: 'Don''t dissappoint me. '
+      ScrollSpeed: 50
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   LevelToLoad: {fileID: 7510473304538297068, guid: ca4fcfd9af6d39a4b84c1778b3680e5b, type: 3}

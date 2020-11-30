@@ -21,7 +21,8 @@ MonoBehaviour:
       LoadEase: 6
     Tip:
       TipText: Welcome to the game's loading screen!
-      ScrollSpeed: 50
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   - LoadBar:
       LoadDelay: 1.2
@@ -30,15 +31,27 @@ MonoBehaviour:
       LoadEase: 1
     Tip:
       TipText: Use arrows to move, space to jump
-      ScrollSpeed: 50
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 21300000, guid: f4c890f961d22b946b548a98fb31e6e1, type: 3}
   - LoadBar:
       LoadDelay: 0.75
-      LoadPercent: 1
+      LoadPercent: 0.85
       LoadTime: 1
       LoadEase: 6
     Tip:
-      TipText: Play time!
+      TipText: 'Dogs really are man''s best friend. '
       ScrollSpeed: 10
+      VoiceOver: {fileID: 0}
+      Emoji: {fileID: 0}
+  - LoadBar:
+      LoadDelay: 0.75
+      LoadPercent: 1
+      LoadTime: 0
+      LoadEase: 6
+    Tip:
+      TipText: 'Enjoy jumping around! Let loose. You deserve it. '
+      ScrollSpeed: 40
+      VoiceOver: {fileID: 0}
       Emoji: {fileID: 0}
   LevelToLoad: {fileID: 4782695787619037902, guid: 6835b41ec152abc418d710ddfcb7360c, type: 3}
