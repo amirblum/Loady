@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour
 	[Header("References")] 
 	public GameObject GameObjectToCreateOnDestroy;
 	[SerializeField] private AudioEvent killedAudioEvent;
+	[SerializeField] GameObject bloodSplatter;
 	
 	[Header("Parameters")] 
 	[SerializeField] private float speed;
@@ -32,6 +33,7 @@ public class EnemyScript : MonoBehaviour
 	{
 		Alive = false;
 		killedAudioEvent.Play();
+		bloodSplatter.SetActive(true);
 		if (GameObjectToCreateOnDestroy)
 		{
 			Instantiate(GameObjectToCreateOnDestroy, transform.position, Quaternion.identity);
